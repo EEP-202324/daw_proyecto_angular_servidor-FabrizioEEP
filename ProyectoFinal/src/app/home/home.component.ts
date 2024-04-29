@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-@Component({
+@Component({ // Decorador
   selector: 'app-home',
   standalone: true,
   imports: [],
