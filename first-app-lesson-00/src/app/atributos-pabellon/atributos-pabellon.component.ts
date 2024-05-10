@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AtributosPabellon } from '../atributos-pabellon';
 
 @Component({
   selector: 'app-atributos-pabellon',
@@ -8,5 +10,5 @@ import { Component } from '@angular/core';
   styleUrl: './atributos-pabellon.component.css'
 })
 export class AtributosPabellonComponent {
-
+  @Input() atributosPabellon!: AtributosPabellon;
 }
