@@ -5,5 +5,5 @@
   </form>
 </section>
 <section class="results">
-  <app-atributos-pabellon [atributosPabellon]="atributosPabellon"></app-atributos-pabellon>
+  <app-atributos-pabellon *ngFor="let atributosPabellon of atributosPabellonList" [atributosPabellon]="atributosPabellon"></app-atributos-pabellon>
 </section>
