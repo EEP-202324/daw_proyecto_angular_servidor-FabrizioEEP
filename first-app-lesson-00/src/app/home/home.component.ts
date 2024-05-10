@@ -28,7 +28,7 @@ export class HomeComponent {
   //   fechaDisponibilidad: new Date('2002-12-12')
   // };
 
-  atributosPabellon: AtributosPabellon[] = [
+  atributosPabellonList: AtributosPabellon[] = [
     {
       id: 9999,
       nombre: 'Test Pabellón 1',
@@ -36,7 +36,7 @@ export class HomeComponent {
       aforo: 2000,
       funcionalidad: FuncionalidadTipo.Aula,
       disponibilidad: true,
-      photo: `${this.baseUrl}/example-house1.jpg`,
+      photo: `${this.baseUrl}/bernard-hermant-CLKGGwIBTaY-unsplash.jpg`,
       fechaDisponibilidad: new Date('2002-12-12')
     },
     {
@@ -46,7 +46,7 @@ export class HomeComponent {
       aforo: 1500,
       funcionalidad: FuncionalidadTipo.Auditorio,
       disponibilidad: false,
-      photo: `${this.baseUrl}/example-house2.jpg`,
+      photo: `${this.baseUrl}/brandon-griggs-wR11KBaB86U-unsplash.jpg`,
       fechaDisponibilidad: new Date('2003-05-25')
     },
     {
@@ -56,7 +56,7 @@ export class HomeComponent {
       aforo: 1800,
       funcionalidad: FuncionalidadTipo.Laboratorio,
       disponibilidad: true,
-      photo: `${this.baseUrl}/example-house3.jpg`,
+      photo: `${this.baseUrl}/i-do-nothing-but-love-lAyXdl1-Wmc-unsplash.jpg`,
       fechaDisponibilidad: new Date('2004-08-10')
     }
   ];
