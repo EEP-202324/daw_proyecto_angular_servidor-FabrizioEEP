@@ -100,5 +100,11 @@ export class ServicioPabellonService {
     }
   ];
 
+  getPabellones(): AtributosPabellon[] {
+    return this.atributosPabellonList;
+  }
 
+  getPabellon(id: number): AtributosPabellon | undefined {
+    return this.atributosPabellonList.find(atributosPabellon => atributosPabellon.id === id);
+  }
 }
