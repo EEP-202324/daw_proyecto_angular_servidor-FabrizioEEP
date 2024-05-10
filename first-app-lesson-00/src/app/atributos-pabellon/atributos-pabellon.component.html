@@ -2,4 +2,5 @@
   <img class="listing-photo" [src]="atributosPabellon.photo" alt="Exterior photo of {{atributosPabellon.nombre}}">
   <h2 class="listing-heading">{{ atributosPabellon.nombre }}</h2>
   <p class="listing-location">{{ atributosPabellon.funcionalidad}}, {{atributosPabellon.fechaDisponibilidad }}</p>
+  <a [routerLink]="['/detalles', atributosPabellon.id]">Saber más</a>
 </section>
