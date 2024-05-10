@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { ServicioPabellonService } from '../servicio-pabellon.service';
+import { AtributosPabellon } from '../atributos-pabellon';
 
 @Component({
   selector: 'app-detalles',
@@ -8,5 +12,9 @@ import { Component } from '@angular/core';
   styleUrl: './detalles.component.css'
 })
 export class DetallesComponent {
-
+  route: ActivatedRoute = inject(ActivatedRoute);
+  atributosPabellonId = -1;
+  constructor() {
+      this.atributosPabellonId = Number(this.route.snapshot.params['id']);
+  }
 }
