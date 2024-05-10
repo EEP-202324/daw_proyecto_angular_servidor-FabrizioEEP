@@ -24,7 +24,7 @@ export class HomeComponent {
     funcionalidad: FuncionalidadTipo.Aula,
     disponibilidad: true,
     photo: `${this.baseUrl}/example-house.jpg`,
-    serviciosAdicionales: ['hola', 'como'],
+    // serviciosAdicionales: ['hola', 'como'],
     fechaDisponibilidad: new Date('2002-12-12')
   };
 }

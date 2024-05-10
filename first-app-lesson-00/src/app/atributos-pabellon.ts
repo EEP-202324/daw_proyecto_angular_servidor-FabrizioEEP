@@ -6,7 +6,7 @@ export interface AtributosPabellon {
   funcionalidad: FuncionalidadTipo;
   disponibilidad: boolean;
   photo: string;
-  serviciosAdicionales: string[];
+  // serviciosAdicionales: string[]; NO. Porque para cada tabla de BD solo acepta una palabra
   fechaDisponibilidad: Date;
 }
 
@@ -16,3 +16,5 @@ export enum FuncionalidadTipo {
   Laboratorio = 'Laboratorio',
   Otro = 'Otro',
 }
+
+// COnvertirlo en una talba en base de datos.
