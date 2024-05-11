@@ -23,8 +23,13 @@ export class HomeComponent {
   servicioPabellonService: ServicioPabellonService = inject(ServicioPabellonService);
 
   constructor() {
-    this.atributosPabellonList = this.servicioPabellonService.getPabellones();
-    this.listaPabellonesFiltado = this.atributosPabellonList;
+
+    this.servicioPabellonService.getPabellones().subscribe(
+      pabellones => {
+        this.atributosPabellonList = pabellones;
+        this.listaPabellonesFiltado = pabellones;
+      }
+    )
   }
 
   filtrarResultado(texto: string) {
