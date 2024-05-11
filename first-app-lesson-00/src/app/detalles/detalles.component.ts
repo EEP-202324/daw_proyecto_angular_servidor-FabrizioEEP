@@ -31,9 +31,12 @@ export class DetallesComponent {
   });
 
   constructor() {
-      const atributosPabellonId = Number(this.route.snapshot.params['id']);
-      this.atributosPabellon =
-  this.servicioPabellonService?.getPabellon(atributosPabellonId);
+    const pabellonId = Number(this.route.snapshot.params['id']);
+    this.servicioPabellonService.getPabellon(pabellonId).subscribe(
+      pabellon => {
+        this.atributosPabellon = pabellon;
+      }
+    );
   }
   enviarSolicitud() {
     this.servicioPabellonService.agregarPabellon(
