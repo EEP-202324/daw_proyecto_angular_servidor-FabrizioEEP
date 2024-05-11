@@ -1,7 +1,7 @@
 export interface AtributosPabellon {
   id: number;
   nombre: string;
-  ubicacion: String;
+  ubicacion: string;
   aforo: number;
   funcionalidad: FuncionalidadTipo;
   disponibilidad: boolean;

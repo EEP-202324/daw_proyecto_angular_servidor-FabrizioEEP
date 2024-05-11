@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { ServicioPabellonService } from '../servicio-pabellon.service';
@@ -13,8 +13,12 @@ import { AtributosPabellon } from '../atributos-pabellon';
 })
 export class DetallesComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
-  atributosPabellonId = -1;
+  servicioPabellonService = inject(ServicioPabellonService);
+  atributosPabellon: AtributosPabellon | undefined;
+
   constructor() {
-      this.atributosPabellonId = Number(this.route.snapshot.params['id']);
+      const atributosPabellonId = Number(this.route.snapshot.params['id']);
+      this.atributosPabellon =
+  this.servicioPabellonService?.getPabellon(atributosPabellonId);
   }
 }

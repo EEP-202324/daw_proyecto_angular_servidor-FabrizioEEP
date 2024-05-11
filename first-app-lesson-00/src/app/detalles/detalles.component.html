@@ -1,1 +1,16 @@
-<p>detalles works! {{ atributosPabellonId }}</p>
+<article>
+  <img class="listing-photo" [src]="atributosPabellon?.photo"
+    alt="Exterior photo of {{atributosPabellon?.nombre}}"/>
+  <section class="listing-description">
+    <h2 class="listing-heading">{{atributosPabellon?.nombre}}</h2>
+    <p class="listing-location">{{atributosPabellon?.aforo}}, {{atributosPabellon?.funcionalidad}}</p>
+  </section>
+  <section class="listing-features">
+    <h2 class="section-heading">Sobre este pabellón</h2>
+    <ul>
+      <li>Aforo: {{atributosPabellon?.aforo}}</li>
+      <li>Funcionalidad: {{atributosPabellon?.funcionalidad}}</li>
+      <li>Fecha de disponibilidad: {{atributosPabellon?.fechaDisponibilidad}}</li>
+    </ul>
+  </section>
+</article>

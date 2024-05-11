@@ -11,7 +11,7 @@ export class ServicioPabellonService {
     {
       id: 9999,
       nombre: 'Test Pabellón 1',
-      ubicacion: 12,
+      ubicacion: 'Av.America',
       aforo: 2000,
       funcionalidad: FuncionalidadTipo.Aula,
       disponibilidad: true,
@@ -21,7 +21,7 @@ export class ServicioPabellonService {
     {
       id: 10001,
       nombre: 'Test Pabellón 2',
-      ubicacion: 15,
+      ubicacion: 'Av. de la Paz',
       aforo: 1500,
       funcionalidad: FuncionalidadTipo.Auditorio,
       disponibilidad: false,
@@ -31,7 +31,7 @@ export class ServicioPabellonService {
     {
       id: 10002,
       nombre: 'Test Pabellón 3',
-      ubicacion: 20,
+      ubicacion: 'Badajoz',
       aforo: 1800,
       funcionalidad: FuncionalidadTipo.Laboratorio,
       disponibilidad: true,
@@ -41,7 +41,7 @@ export class ServicioPabellonService {
     {
       id: 10003,
       nombre: 'Test Pabellón 4',
-      ubicacion: 18,
+      ubicacion: 'Gutierrez',
       aforo: 2200,
       funcionalidad: FuncionalidadTipo.Aula,
       disponibilidad: true,
@@ -51,7 +51,7 @@ export class ServicioPabellonService {
     {
       id: 10004,
       nombre: 'Test Pabellón 5',
-      ubicacion: 25,
+      ubicacion: 'Av.Lagosta',
       aforo: 3000,
       funcionalidad: FuncionalidadTipo.Auditorio,
       disponibilidad: false,
@@ -61,7 +61,7 @@ export class ServicioPabellonService {
     {
       id: 10005,
       nombre: 'Test Pabellón 6',
-      ubicacion: 30,
+      ubicacion: 'Felipe VII',
       aforo: 1800,
       funcionalidad: FuncionalidadTipo.Laboratorio,
       disponibilidad: true,
@@ -71,7 +71,7 @@ export class ServicioPabellonService {
     {
       id: 10006,
       nombre: 'Test Pabellón 7',
-      ubicacion: 22,
+      ubicacion: 'Goya',
       aforo: 2500,
       funcionalidad: FuncionalidadTipo.Otro,
       disponibilidad: true,
@@ -81,7 +81,7 @@ export class ServicioPabellonService {
     {
       id: 10007,
       nombre: 'Test Pabellón 8',
-      ubicacion: 28,
+      ubicacion: 'Pinto',
       aforo: 2800,
       funcionalidad: FuncionalidadTipo.Auditorio,
       disponibilidad: false,
@@ -91,7 +91,7 @@ export class ServicioPabellonService {
     {
       id: 10008,
       nombre: 'Test Pabellón 9',
-      ubicacion: 17,
+      ubicacion: 'Lista',
       aforo: 2000,
       funcionalidad: FuncionalidadTipo.Aula,
       disponibilidad: true,
