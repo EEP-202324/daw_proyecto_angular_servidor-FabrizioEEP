@@ -1,9 +1,11 @@
 <section>
   <form>
-    <input type="text" placeholder="Filter by city">
-    <button class="primary" type="button">Search</button>
+    <input type="text" placeholder="Filter by city" #filter>
+    <button class="primary" type="button" (click)="filtrarResultado(filter.value)">Buscar</button>
   </form>
 </section>
 <section class="results">
-  <app-atributos-pabellon *ngFor="let atributosPabellon of atributosPabellonList" [atributosPabellon]="atributosPabellon"></app-atributos-pabellon>
+  <app-atributos-pabellon *ngFor="let atributosPabellon of listaPabellonesFiltado" [atributosPabellon]="atributosPabellon"></app-atributos-pabellon>
 </section>
+
+

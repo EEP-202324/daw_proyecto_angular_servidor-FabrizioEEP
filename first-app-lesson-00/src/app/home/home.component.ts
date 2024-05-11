@@ -18,10 +18,23 @@ import { ServicioPabellonService } from '../servicio-pabellon.service';
 export class HomeComponent {
   readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
 
+  listaPabellonesFiltado: AtributosPabellon[] = [];
   atributosPabellonList: AtributosPabellon[] = [];
   servicioPabellonService: ServicioPabellonService = inject(ServicioPabellonService);
 
   constructor() {
     this.atributosPabellonList = this.servicioPabellonService.getPabellones();
+    this.listaPabellonesFiltado = this.atributosPabellonList;
+  }
+
+  filtrarResultado(texto: string) {
+    if (!texto) {
+      this.listaPabellonesFiltado = this.atributosPabellonList;
+      return;
+    }
+    this.listaPabellonesFiltado = this.atributosPabellonList.filter(
+      atributosPabellon =>
+  atributosPabellon?.nombre.toLowerCase().includes(texto.toLowerCase())
+    );
   }
 }
