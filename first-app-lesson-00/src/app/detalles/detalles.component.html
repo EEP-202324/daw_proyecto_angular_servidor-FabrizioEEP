@@ -13,4 +13,24 @@
       <li>Fecha de disponibilidad: {{atributosPabellon?.fechaDisponibilidad}}</li>
     </ul>
   </section>
+  <section class="listing-apply">
+    <h2 class="section-heading">Envialo ahora para crear un pabellon</h2>
+    <form [formGroup]="formularioSolicitud" (submit)="enviarSolicitud()">
+      <label for="first-name">Nombre</label>
+      <input id="first-name" type="text" formControlName="firstName">
+
+      <label for="funcionalidad">Funcionalidad</label>
+      <input type="text" formControlName="funcionalidad">
+
+      <label for="disponibilidad">Diponibilidad</label>
+      <input type="text" formControlName="Disponibilidad">
+
+      <label for="last-name">Ubicación</label>
+      <input id="last-name" type="text" formControlName="lastName">
+
+      <label for="email">Aforo</label>
+      <input id="email" type="email" formControlName="email">
+      <button type="submit" class="primary">Enviar</button>
+    </form>
+  </section>
 </article>
