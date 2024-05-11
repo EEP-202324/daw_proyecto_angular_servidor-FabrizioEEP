@@ -107,4 +107,8 @@ export class ServicioPabellonService {
   getPabellon(id: number): AtributosPabellon | undefined {
     return this.atributosPabellonList.find(atributosPabellon => atributosPabellon.id === id);
   }
+
+  agregarPabellon(nombre: string, ubicacion: string, aforo: number, funcionalidad: FuncionalidadTipo, disponibilidad: boolean, photo: string, fechaDisponibilidad: Date) {
+    console.log(`Aplicación de pabellon recibido: nombre: ${nombre}, ubicacion: ${ubicacion}, aforo: ${aforo}, funcionalidad: ${funcionalidad}, disponibilidad: ${disponibilidad}, photo: ${photo}, fechaDisponible${fechaDisponibilidad}`)
+  }
 }
