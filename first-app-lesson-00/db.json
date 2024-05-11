@@ -1,0 +1,95 @@
+{
+  "atributos": [
+    {
+      "id": 9999,
+      "nombre": "Test Pabellón 1",
+      "ubicacion": "Av.America",
+      "aforo": 2000,
+      "funcionalidad": "Aula",
+      "disponibilidad": true,
+      "photo": "baseUrl/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      "fechaDisponibilidad": "2002-12-12T00:00:00.000Z"
+    },
+    {
+      "id": 10001,
+      "nombre": "Test Pabellón 2",
+      "ubicacion": "Av. de la Paz",
+      "aforo": 1500,
+      "funcionalidad": "Auditorio",
+      "disponibilidad": false,
+      "photo": "baseUrl/brandon-griggs-wR11KBaB86U-unsplash.jpg",
+      "fechaDisponibilidad": "2003-05-25T00:00:00.000Z"
+    },
+    {
+      "id": 10002,
+      "nombre": "Test Pabellón 3",
+      "ubicacion": "Badajoz",
+      "aforo": 1800,
+      "funcionalidad": "Laboratorio",
+      "disponibilidad": true,
+      "photo": "baseUrl/i-do-nothing-but-love-lAyXdl1-Wmc-unsplash.jpg",
+      "fechaDisponibilidad": "2004-08-10T00:00:00.000Z"
+    },
+    {
+      "id": 10003,
+      "nombre": "Test Pabellón 4",
+      "ubicacion": "Gutierrez",
+      "aforo": 2200,
+      "funcionalidad": "Aula",
+      "disponibilidad": true,
+      "photo": "baseUrl/krzysztof-hepner-978RAXoXnH4-unsplash.jpg",
+      "fechaDisponibilidad": "2005-10-15T00:00:00.000Z"
+    },
+    {
+      "id": 10004,
+      "nombre": "Test Pabellón 5",
+      "ubicacion": "Av.Lagosta",
+      "aforo": 3000,
+      "funcionalidad": "Auditorio",
+      "disponibilidad": false,
+      "photo": "baseUrl/r-architecture-JvQ0Q5IkeMM-unsplash.jpg",
+      "fechaDisponibilidad": "2006-02-28T00:00:00.000Z"
+    },
+    {
+      "id": 10005,
+      "nombre": "Test Pabellón 6",
+      "ubicacion": "Felipe VII",
+      "aforo": 1800,
+      "funcionalidad": "Laboratorio",
+      "disponibilidad": true,
+      "photo": "baseUrl/phil-hearing-IYfp2Ixe9nM-unsplash.jpg",
+      "fechaDisponibilidad": "2007-07-20T00:00:00.000Z"
+    },
+    {
+      "id": 10006,
+      "nombre": "Test Pabellón 7",
+      "ubicacion": "Goya",
+      "aforo": 2500,
+      "funcionalidad": "Otro",
+      "disponibilidad": true,
+      "photo": "baseUrl/r-architecture-GGupkreKwxA-unsplash.jpg",
+      "fechaDisponibilidad": "2008-11-12T00:00:00.000Z"
+    },
+    {
+      "id": 10007,
+      "nombre": "Test Pabellón 8",
+      "ubicacion": "Pinto",
+      "aforo": 2800,
+      "funcionalidad": "Auditorio",
+      "disponibilidad": false,
+      "photo": "baseUrl/saru-robert-9rP3mxf8qWI-unsplash.jpg",
+      "fechaDisponibilidad": "2009-04-05T00:00:00.000Z"
+    },
+    {
+      "id": 10008,
+      "nombre": "Test Pabellón 9",
+      "ubicacion": "Lista",
+      "aforo": 2000,
+      "funcionalidad": "Aula",
+      "disponibilidad": true,
+      "photo": "baseUrl/webaliser-_TPTXZd9mOo-unsplash.jpg",
+      "fechaDisponibilidad": "2010-09-30T00:00:00.000Z"
+    }
+  ]
+
+}
