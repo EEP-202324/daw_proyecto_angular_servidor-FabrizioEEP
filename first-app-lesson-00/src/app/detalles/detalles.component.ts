@@ -1,4 +1,4 @@
-import { Component, Inject, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { ServicioPabellonService } from '../servicio-pabellon.service';
@@ -18,7 +18,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class DetallesComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   servicioPabellonService = inject(ServicioPabellonService);
-  atributosPabellon: AtributosPabellon | undefined;
+  pabellon: AtributosPabellon | undefined;
 
   formularioSolicitud = new FormGroup({
     nombre: new FormControl(''),
@@ -34,7 +34,7 @@ export class DetallesComponent {
     const pabellonId = Number(this.route.snapshot.params['id']);
     this.servicioPabellonService.getPabellon(pabellonId).subscribe(
       pabellon => {
-        this.atributosPabellon = pabellon;
+        this.pabellon = pabellon;
       }
     );
   }

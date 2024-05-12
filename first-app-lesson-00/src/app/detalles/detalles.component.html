@@ -1,35 +1,35 @@
 <article>
-  <img class="listing-photo" [src]="atributosPabellon?.photo"
-    alt="Exterior photo of {{atributosPabellon?.nombre}}"/>
+  <img class="listing-photo" [src]="pabellon?.photo"
+    alt="Exterior photo of {{pabellon?.nombre}}"/>
   <section class="listing-description">
-    <h2 class="listing-heading">{{atributosPabellon?.nombre}}</h2>
-    <p class="listing-location">{{atributosPabellon?.aforo}}, {{atributosPabellon?.funcionalidad}}</p>
+    <h2 class="listing-heading">{{pabellon?.nombre}}</h2>
+    <p class="listing-location">{{pabellon?.aforo}}, {{pabellon?.funcionalidad}}</p>
   </section>
   <section class="listing-features">
     <h2 class="section-heading">Sobre este pabellón</h2>
     <ul>
-      <li>Aforo: {{atributosPabellon?.aforo}}</li>
-      <li>Funcionalidad: {{atributosPabellon?.funcionalidad}}</li>
-      <li>Fecha de disponibilidad: {{atributosPabellon?.fechaDisponibilidad}}</li>
+      <li>Aforo: {{pabellon?.aforo}}</li>
+      <li>Funcionalidad: {{pabellon?.funcionalidad}}</li>
+      <li>Fecha de disponibilidad: {{pabellon?.fechaDisponibilidad}}</li>
     </ul>
   </section>
   <section class="listing-apply">
     <h2 class="section-heading">Envialo ahora para crear un pabellon</h2>
     <form [formGroup]="formularioSolicitud" (submit)="enviarSolicitud()">
-      <label for="first-name">Nombre</label>
-      <input id="first-name" type="text" formControlName="firstName">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" type="text" formControlName="nombre">
 
       <label for="funcionalidad">Funcionalidad</label>
       <input type="text" formControlName="funcionalidad">
 
       <label for="disponibilidad">Diponibilidad</label>
-      <input type="text" formControlName="Disponibilidad">
+      <input type="text" formControlName="disponibilidad">
 
-      <label for="last-name">Ubicación</label>
-      <input id="last-name" type="text" formControlName="lastName">
+      <label for="ubicacion">Ubicación</label>
+      <input id="ubicacion" type="text" formControlName="ubicacion">
 
-      <label for="email">Aforo</label>
-      <input id="email" type="email" formControlName="email">
+      <label for="aforo">Aforo</label>
+      <input id="aforo" type="aforo" formControlName="aforo">
       <button type="submit" class="primary">Enviar</button>
     </form>
   </section>
