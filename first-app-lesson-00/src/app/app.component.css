@@ -13,3 +13,13 @@ header {
   padding: var(--content-padding);
 }
 
+.brand-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-logo{
+  display: flex;
+  width: 65px;
+}
