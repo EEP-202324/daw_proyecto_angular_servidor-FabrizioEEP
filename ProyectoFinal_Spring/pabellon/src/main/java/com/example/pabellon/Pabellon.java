@@ -2,9 +2,11 @@ package com.example.pabellon;
 
 import java.sql.Date;
 
+import org.springframework.data.annotation.Id;
+
 public class Pabellon {
 
-		private Long id;
+		private @Id Long id;
 	    private String nombre;
 	    private String ubicacion;
 	    private int aforo;
