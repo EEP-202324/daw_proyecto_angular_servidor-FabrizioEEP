@@ -24,6 +24,6 @@ class PabellonApplicationTests {
 
         DocumentContext documentContext = JsonPath.parse(response.getBody());
         Number id = documentContext.read("$.id");
-        assertThat(id).isNotNull();
+        assertThat(id).isEqualTo(99);
     }
 }

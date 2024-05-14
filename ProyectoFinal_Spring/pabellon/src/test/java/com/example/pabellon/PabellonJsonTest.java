@@ -3,6 +3,7 @@ package com.example.pabellon;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.IOException;
+import java.sql.Date;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class PabellonJsonTest {
 
     @Test
     void pabellonSerializationTest() throws IOException {
-        Pabellon pabellon = new Pabellon(1, "amount", "ubicacion", 100, FuncionalidadTipo.AUDITORIO, true, "foto");
+        Pabellon pabellon = new Pabellon(1, "amount", "ubicacion", 100, FuncionalidadTipo.AUDITORIO, true, "foto",  new Date(System.currentTimeMillis()));
         assertThat(json.write(pabellon)).isStrictlyEqualToJson("expected.json");
         assertThat(json.write(pabellon)).hasJsonPathNumberValue("@.id");
         assertThat(json.write(pabellon)).extractingJsonPathNumberValue("@.id")

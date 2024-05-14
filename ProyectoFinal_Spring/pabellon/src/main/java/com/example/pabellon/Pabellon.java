@@ -14,7 +14,7 @@ public class Pabellon {
 	    private Date fechaDisponibilidad;
 
 	    public Pabellon(int id, String nombre, String ubicacion, int aforo, FuncionalidadTipo funcionalidad,
-			boolean disponibilidad, String foto, String photo) {
+			boolean disponibilidad, String photo, Date fechaDisponibilidad) {
 		this.id = id;
 		this.nombre = nombre;
 		this.ubicacion = ubicacion;
@@ -22,6 +22,7 @@ public class Pabellon {
 		this.funcionalidad = funcionalidad;
 		this.disponibilidad = disponibilidad;
 		this.photo = photo;
+		this.fechaDisponibilidad = fechaDisponibilidad;
 	}   
 
 	    public int getId() {
