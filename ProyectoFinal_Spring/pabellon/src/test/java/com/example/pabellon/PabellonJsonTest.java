@@ -17,7 +17,7 @@ public class PabellonJsonTest {
 
     @Test
     void pabellonSerializationTest() throws IOException {
-        Pabellon pabellon = new Pabellon(1, "amount", "ubicacion", 100, FuncionalidadTipo.AUDITORIO, true, "foto",  new Date(System.currentTimeMillis()));
+        Pabellon pabellon = new Pabellon(99L, "amount", "ubicacion", 100, FuncionalidadTipo.AUDITORIO, true, "foto",  new Date(System.currentTimeMillis()));
         assertThat(json.write(pabellon)).isStrictlyEqualToJson("expected.json");
         assertThat(json.write(pabellon)).hasJsonPathNumberValue("@.id");
         assertThat(json.write(pabellon)).extractingJsonPathNumberValue("@.id")
