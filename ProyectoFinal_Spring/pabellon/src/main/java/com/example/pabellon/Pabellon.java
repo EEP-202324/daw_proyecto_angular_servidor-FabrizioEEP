@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class Pabellon {
 
-		private int id;
+		private Long id;
 	    private String nombre;
 	    private String ubicacion;
 	    private int aforo;
@@ -13,7 +13,7 @@ public class Pabellon {
 	    private String photo;
 	    private Date fechaDisponibilidad;
 
-	    public Pabellon(int id, String nombre, String ubicacion, int aforo, FuncionalidadTipo funcionalidad,
+	    public Pabellon(Long id, String nombre, String ubicacion, int aforo, FuncionalidadTipo funcionalidad,
 			boolean disponibilidad, String photo, Date fechaDisponibilidad) {
 		this.id = id;
 		this.nombre = nombre;
@@ -25,11 +25,11 @@ public class Pabellon {
 		this.fechaDisponibilidad = fechaDisponibilidad;
 	}   
 
-	    public int getId() {
+	    public Long getId() {
 			return id;
 		}
 
-		public void setId(int id) {
+		public void setId(Long id) {
 			this.id = id;
 		}
 
