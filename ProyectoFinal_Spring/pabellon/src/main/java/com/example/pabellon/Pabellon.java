@@ -2,10 +2,14 @@ package com.example.pabellon;
 
 import java.sql.Date;
 
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 
 public class Pabellon {
 
+		
+//		@jakarta.persistence.Id
+//		@GeneratedValue(strategy = GenerationType.AUTO)
+//		private Long id;
 		private @Id Long id;
 	    private String nombre;
 	    private String ubicacion;
@@ -26,6 +30,9 @@ public class Pabellon {
 		this.photo = photo;
 		this.fechaDisponibilidad = fechaDisponibilidad;
 	}   
+//	    public Pabellon() {
+//	    	
+//	    }
 
 	    public Long getId() {
 			return id;
@@ -99,3 +106,61 @@ public class Pabellon {
 				+ ", fechaDisponibilidad=" + fechaDisponibilidad + "]";
 	}
 }
+
+
+/* package com.example.pabellon;
+
+import java.sql.Date;
+import java.time.LocalDate;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Pabellon {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    public Pabellon(Long id, String nombre, String ubicacion, int aforo, FuncionalidadTipo funcionalidad,
+			boolean disponibilidad, String photo, Date date) {
+		this.id = id;
+		this.nombre = nombre;
+		this.ubicacion = ubicacion;
+		this.aforo = aforo;
+		this.funcionalidad = funcionalidad;
+		this.disponibilidad = disponibilidad;
+		this.photo = photo;
+		this.fechaDisponibilidad = date;
+	}
+
+	private String nombre;
+    private String ubicacion;
+    private int aforo;
+    private FuncionalidadTipo funcionalidad;
+    private boolean disponibilidad;
+    private String photo;
+    private Date fechaDisponibilidad;
+
+    public Pabellon() {
+        // Constructor vacío requerido por JPA
+    }
+
+    // Getters y setters
+
+    @Override
+    public String toString() {
+        return "Pabellon{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", ubicacion='" + ubicacion + '\'' +
+                ", aforo=" + aforo +
+                ", funcionalidad=" + funcionalidad +
+                ", disponibilidad=" + disponibilidad +
+                ", photo='" + photo + '\'' +
+                ", fechaDisponibilidad=" + fechaDisponibilidad +
+                '}';
+    }
+} */

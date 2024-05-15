@@ -8,18 +8,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 @RequestMapping("/pabellon")
 public class PabellonController {
-	
+
+
+
 	@GetMapping("/{requestedId}")
 	private ResponseEntity<Pabellon> findById(@PathVariable Long requestedId) {
 		if (requestedId.equals(99L)) {
-        Pabellon pabellon = new Pabellon(99L, "Pabellon A", "Ubicación A", 100, FuncionalidadTipo.AUDITORIO, true, "ruta/photo", new Date(System.currentTimeMillis()));
-		return ResponseEntity.ok(pabellon);
+			Pabellon pabellon = new Pabellon(99L, "Pabellon A", "Ubicación A", 100, FuncionalidadTipo.AUDITORIO, true,
+					"ruta/photo", new Date(System.currentTimeMillis()));
+			return ResponseEntity.ok(pabellon);
 		} else {
-		return ResponseEntity.notFound().build();
+			return ResponseEntity.notFound().build();
 		}
 	}
+
 }
