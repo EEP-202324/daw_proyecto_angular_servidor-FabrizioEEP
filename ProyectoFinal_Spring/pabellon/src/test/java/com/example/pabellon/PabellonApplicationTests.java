@@ -13,7 +13,7 @@ import org.springframework.http.ResponseEntity;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
 
-@EnableJpaRepositories
+@EnableJpaRepositories(basePackages = "com.example.pabellon", considerNestedRepositories = true)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class PabellonApplicationTests {
     @Autowired

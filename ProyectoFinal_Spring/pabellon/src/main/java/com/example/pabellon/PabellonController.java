@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/pabellon")
 public class PabellonController {
 
-
+	private final PabellonRepository pabellonRepository;
+	
+	public PabellonController(PabellonRepository pabellonRepository) {
+		this.pabellonRepository = pabellonRepository;
+	}
 
 	@GetMapping("/{requestedId}")
 	private ResponseEntity<Pabellon> findById(@PathVariable Long requestedId) {
