@@ -13,7 +13,7 @@ import org.springframework.http.ResponseEntity;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
 
-@EnableJpaRepositories(basePackages = "com.example.pabellon", considerNestedRepositories = true)
+@EnableJpaRepositories
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class PabellonApplicationTests {
     @Autowired
@@ -21,7 +21,7 @@ class PabellonApplicationTests {
 
     @Test
     void shouldReturnAPabellonWhenDataIsSaved() {
-        ResponseEntity<String> response = restTemplate.getForEntity("/pabellon/99", String.class);
+        ResponseEntity<String> response = restTemplate.getForEntity("/pabellones/99", String.class);
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 
@@ -32,7 +32,7 @@ class PabellonApplicationTests {
     
     @Test
     void shouldNotReturnAPabellonWithAnUnknownId() {
-      ResponseEntity<String> response = restTemplate.getForEntity("/pabellon/1000", String.class);
+      ResponseEntity<String> response = restTemplate.getForEntity("/pabellones/1000", String.class);
 
       assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
       assertThat(response.getBody()).isBlank();

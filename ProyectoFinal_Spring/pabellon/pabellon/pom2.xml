@@ -8,11 +8,11 @@
 		<version>3.2.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>pabellon</artifactId>
+	<groupId>com.eep.verduleria</groupId>
+	<artifactId>back</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>pabellon</name>
-	<description>Proyecto Final Spring</description>
+	<name>back</name>
+	<description>Proyecto final de todas las asignaturas - Parte back</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

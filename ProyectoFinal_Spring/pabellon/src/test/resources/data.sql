@@ -1,0 +1,2 @@
+INSERT INTO Pabellon (id, nombre, ubicacion, aforo, funcionalidad, disponibilidad, photo, fecha_disponibilidad) 
+VALUES (99, 'Pabellon A', 'Ubicacion A', 100, 'Auditorio', true, 'ruta/a/la/foto.jpg', '5-15-2024');

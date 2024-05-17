@@ -2,15 +2,16 @@ package com.example.pabellon;
 
 import java.sql.Date;
 
-import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
 public class Pabellon {
 
 		
-//		@jakarta.persistence.Id
-//		@GeneratedValue(strategy = GenerationType.AUTO)
-//		private Long id;
-		private @Id Long id;
+		@jakarta.persistence.Id
+		@GeneratedValue(strategy = GenerationType.AUTO)
+		private Long id;
+//		private @Id Long id;
 	    private String nombre;
 	    private String ubicacion;
 	    private int aforo;
@@ -30,9 +31,9 @@ public class Pabellon {
 		this.photo = photo;
 		this.fechaDisponibilidad = fechaDisponibilidad;
 	}   
-//	    public Pabellon() {
-//	    	
-//	    }
+	    public Pabellon() {
+	    	
+	    }
 
 	    public Long getId() {
 			return id;
