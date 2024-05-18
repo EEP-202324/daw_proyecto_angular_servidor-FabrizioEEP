@@ -1,4 +1,9 @@
 {
   "id": 99,
-  "amount": 123.45
+  "nombre": "pabellon1",
+  "ubicacion": "Londres",
+  "aforo": 100,
+  "funcionalidad": "AUDITORIO",
+  "disponibilidad": true,
+  "photo": "foto"
 }
