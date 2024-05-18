@@ -1,27 +1,36 @@
 package com.example.pabellon;
 
-import java.util.Objects;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+@Entity
 public class Pabellon {
 
-	private Long id;
-    private String nombre;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+	private String nombre;
     private String ubicacion;
     private int aforo;
-    private FuncionalidadTipo funcionalidad;
+
     private boolean disponibilidad;
     private String photo;
     
-	public Pabellon(Long id, String nombre, String ubicacion, int aforo, FuncionalidadTipo funcionalidad,
+	public Pabellon(Long id, String nombre, String ubicacion, int aforo,
 			boolean disponibilidad, String photo) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.ubicacion = ubicacion;
 		this.aforo = aforo;
-		this.funcionalidad = funcionalidad;
 		this.disponibilidad = disponibilidad;
 		this.photo = photo;
+	}
+	
+	public Pabellon() {
+		
 	}
 	
 	public Long getId() {
@@ -56,14 +65,6 @@ public class Pabellon {
 		this.aforo = aforo;
 	}
 
-	public FuncionalidadTipo getFuncionalidad() {
-		return funcionalidad;
-	}
-
-	public void setFuncionalidad(FuncionalidadTipo funcionalidad) {
-		this.funcionalidad = funcionalidad;
-	}
-
 	public boolean isDisponibilidad() {
 		return disponibilidad;
 	}
@@ -80,30 +81,10 @@ public class Pabellon {
 		this.photo = photo;
 	}
 	
-	@Override
-	public int hashCode() {
-		return Objects.hash(aforo, disponibilidad, funcionalidad, id, nombre, photo, ubicacion);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Pabellon other = (Pabellon) obj;
-		return aforo == other.aforo && disponibilidad == other.disponibilidad && funcionalidad == other.funcionalidad
-				&& Objects.equals(id, other.id) && Objects.equals(nombre, other.nombre)
-				&& Objects.equals(photo, other.photo) && Objects.equals(ubicacion, other.ubicacion);
-	}
-	
-	@Override
+    @Override
 	public String toString() {
 		return "Pabellon [id=" + id + ", nombre=" + nombre + ", ubicacion=" + ubicacion + ", aforo=" + aforo
-				+ ", funcionalidad=" + funcionalidad + ", disponibilidad=" + disponibilidad + ", photo=" + photo
-				+ ", fechaDisponibilidad=" + "]";
+				+ ", disponibilidad=" + disponibilidad + ", photo=" + photo + "]";
 	}
 	
 }

@@ -3,7 +3,6 @@
   "nombre": "pabellon1",
   "ubicacion": "Londres",
   "aforo": 100,
-  "funcionalidad": "AUDITORIO",
   "disponibilidad": true,
-  "photo": "foto"
+  "photo": "ruta/a/la/foto.jpg"
 }
