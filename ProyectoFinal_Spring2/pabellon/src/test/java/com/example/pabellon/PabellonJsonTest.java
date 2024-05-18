@@ -67,4 +67,5 @@ public class PabellonJsonTest {
        assertThat(json.parseObject(expected).isDisponibilidad()).isEqualTo(true);
        assertThat(json.parseObject(expected).getPhoto()).isEqualTo("foto");
     }
+  
 }
