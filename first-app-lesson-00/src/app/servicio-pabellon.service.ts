@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { AtributosPabellon, FuncionalidadTipo } from './atributos-pabellon';
+import { AtributosPabellon } from './atributos-pabellon';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
-import { tap } from 'rxjs';
+import { Observable, switchMap, tap } from 'rxjs';
 
 
 
@@ -11,7 +11,7 @@ import { tap } from 'rxjs';
 })
 export class ServicioPabellonService {
   readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
-  url = 'http://localhost:3000/atributos';
+  url = 'http://localhost:8080/pabellones';
   constructor(private http: HttpClient) { }
 
   getPabellones() {
@@ -22,13 +22,21 @@ export class ServicioPabellonService {
     return this.http.get<AtributosPabellon>(`${this.url}/${id}`);
   }
 
-  agregarPabellon(atributosPabellon: AtributosPabellon, nombre: string, ubicacion: string, aforo: number, funcionalidad: FuncionalidadTipo, disponibilidad: boolean, photo: string, fechaDisponibilidad: Date) {
-    return this.http.post<AtributosPabellon>(this.url, atributosPabellon).pipe(
-    tap(() => {
-      console.log(`Aplicación de pabellon recibido: nombre: ${nombre}, ubicacion: ${ubicacion}, aforo: ${aforo}, funcionalidad: ${funcionalidad}, disponibilidad: ${disponibilidad}, photo: ${photo}, fechaDisponible${fechaDisponibilidad}`);
-    })
-  )
-  };
+  agregarPabellon(nombre: string, ubicacion: string, aforo: number, disponibilidad: boolean, photo: string): Observable<AtributosPabellon> {
+    const pabellonData = {
+      nombre: nombre,
+      ubicacion: ubicacion,
+      aforo: aforo,
+      disponibilidad: disponibilidad,
+      photo: photo,
+    };
+
+    return this.http.post<AtributosPabellon>(this.url, pabellonData).pipe(
+      tap(() => {
+        console.log(`Pabellón agregado: nombre: ${nombre}, ubicacion: ${ubicacion}, aforo: ${aforo}, disponibilidad: ${disponibilidad}, photo: ${photo}`);
+      })
+    );
+  }
 
   actualizarPabellon(atributosPabellon: AtributosPabellon) {
     // const url = ${this.url}/${pabellon.id};
@@ -40,12 +48,15 @@ export class ServicioPabellonService {
   }
 
   eliminarPabellon(id: number) {
-    return this.http.delete(`${this.url}/${id}`).pipe(
-      tap(() => {
-        console.log('Pabellón eliminado correctamente');
-      })
+    return this.http.get<AtributosPabellon>(`${this.url}/${id}`).pipe(
+      switchMap(pabellon =>
+        this.http.delete(`${this.url}/${id}`).pipe(
+          tap(() => {
+            console.log(`Pabellón ${pabellon.id} eliminado correctamente`);
+          })
+        )
+      )
     );
   }
 }
-
 

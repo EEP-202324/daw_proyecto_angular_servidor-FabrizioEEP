@@ -3,34 +3,36 @@
     alt="Exterior photo of {{pabellon?.nombre}}"/>
   <section class="listing-description">
     <h2 class="listing-heading">{{pabellon?.nombre}}</h2>
-    <p class="listing-location">{{pabellon?.aforo}}, {{pabellon?.funcionalidad}}</p>
+    <h2 class="section-heading">Sobre este pabellón</h2>
+    <p class="listing-location">{{pabellon?.aforo}}, <!--{{pabellon?.funcionalidad}}--></p>
   </section>
   <section class="listing-features">
-    <h2 class="section-heading">Sobre este pabellón</h2>
+
     <ul>
       <li>Aforo: {{pabellon?.aforo}}</li>
-      <li>Funcionalidad: {{pabellon?.funcionalidad}}</li>
-      <li>Fecha de disponibilidad: {{pabellon?.fechaDisponibilidad}}</li>
+      <!-- <li>Funcionalidad: {{pabellon?.funcionalidad}}</li>
+      <li>Fecha de disponibilidad: {{pabellon?.fechaDisponibilidad}}</li> -->
     </ul>
   </section>
   <section class="listing-apply">
-    <h2 class="section-heading">Envialo ahora para crear un pabellon</h2>
-    <form [formGroup]="formularioSolicitud" (submit)="enviarSolicitud()">
+    <h2 class="section-heading">¿Te apetece modificar este pabellón?</h2>
+    <form [formGroup]="formularioSolicitud" (submit)="enviar()">
       <label for="nombre">Nombre</label>
       <input id="nombre" type="text" formControlName="nombre">
-
-      <label for="funcionalidad">Funcionalidad</label>
-      <input type="text" formControlName="funcionalidad">
-
-      <label for="disponibilidad">Diponibilidad</label>
-      <input type="text" formControlName="disponibilidad">
 
       <label for="ubicacion">Ubicación</label>
       <input id="ubicacion" type="text" formControlName="ubicacion">
 
       <label for="aforo">Aforo</label>
       <input id="aforo" type="aforo" formControlName="aforo">
-      <button type="submit" class="primary">Enviar</button>
+
+      <label for="disponibilidad">Diponibilidad</label>
+      <input type="text" formControlName="disponibilidad">
+
+      <label for="photo">Imagen (Link)</label>
+      <input id="photo" type="photo" formControlName="photo">
+
+      <button type="submit" class="primary" onclick="enviarSolicitud()">Modificar</button>
     </form>
   </section>
 </article>
