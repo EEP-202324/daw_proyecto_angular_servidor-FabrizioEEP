@@ -86,7 +86,7 @@ class PabellonApplicationTests {
         assertThat(pabellonCount).isEqualTo(3);
 
         JSONArray ids = documentContext.read("$..id");
-        assertThat(ids).containsExactlyInAnyOrder(99, 100, 1052);
+        assertThat(ids).containsExactlyInAnyOrder(99, 100, 101);
 
         JSONArray nombres = documentContext.read("$..nombre");
         assertThat(nombres).containsExactlyInAnyOrder("pabellon1", "pabellon2", "pabellon3");
@@ -115,36 +115,64 @@ class PabellonApplicationTests {
         assertThat(nombre).isEqualTo("pabellon1");
     }
 
-//    @Test
-//    void shouldReturnASortedPageOfPabellonWithNoParametersAndUseDefaultValues() {
-//        ResponseEntity<String> response = restTemplate.getForEntity("/pabellones", String.class);
-//        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-//
-//        DocumentContext documentContext = JsonPath.parse(response.getBody());
-//        JSONArray page = documentContext.read("$[*]");
-//        assertThat(page.size()).isEqualTo(3);
-//
-//        JSONArray nombres = documentContext.read("$..nombre");
-//        assertThat(nombres).containsExactly("pabellon1", "pabellon2", "pabellon3");
-//    }
-//    
-//    @Test
-//    @DirtiesContext
-//    void shouldUpdateAnExistingPabellon() {
-//        Pabellon pabellonUpdate = new Pabellon(null, "pabellon4", "", 0, true, "");
-//        HttpEntity<Pabellon> request = new HttpEntity<>(pabellonUpdate);
-//        ResponseEntity<Void> response = restTemplate
-//                .exchange("/pabellones/99", HttpMethod.PUT, request, Void.class);
-//        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
-//
-//  	  ResponseEntity<String> getResponse = restTemplate
-//  	          .getForEntity("/pabellones/99", String.class);
-//  	  assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
-//  	  DocumentContext documentContext = JsonPath.parse(getResponse.getBody());
-//  	  Number id = documentContext.read("$.id");
-//  	  String nombre = documentContext.read("$.nombre");
-//  	  assertThat(id).isEqualTo(99);
-//  	  assertThat(nombre).isEqualTo("pabellon4");
-//    }
+    @Test
+    void shouldReturnASortedPageOfPabellonWithNoParametersAndUseDefaultValues() {
+        ResponseEntity<String> response = restTemplate.getForEntity("/pabellones", String.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+
+        DocumentContext documentContext = JsonPath.parse(response.getBody());
+        JSONArray page = documentContext.read("$[*]");
+        assertThat(page.size()).isEqualTo(3);
+
+        JSONArray nombres = documentContext.read("$..nombre");
+        assertThat(nombres).containsExactly("pabellon1", "pabellon2", "pabellon3");
+    }
+    
+    @Test
+    @DirtiesContext
+    void shouldUpdateAnExistingPabellon() {
+        Pabellon pabellonUpdate = new Pabellon(null, "pabellon4", null, 0, true, null);
+        HttpEntity<Pabellon> request = new HttpEntity<>(pabellonUpdate);
+        ResponseEntity<Void> response = restTemplate
+                .exchange("/pabellones/99", HttpMethod.PUT, request, Void.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
+        
+        ResponseEntity<String> getResponse = restTemplate
+                .getForEntity("/pabellones/99", String.class);
+        assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
+        DocumentContext documentContext = JsonPath.parse(getResponse.getBody());
+        Number id = documentContext.read("$.id");
+        String nombre = documentContext.read("$.nombre");
+        assertThat(id).isEqualTo(99);
+        assertThat(nombre).isEqualTo("pabellon4");
+    }
+    
+    @Test
+    void shouldNotUpdateAPabellonThatDoesNotExist() {
+        Pabellon unknownPabellon = new Pabellon(null, "pabellon4", null, 0, true, null);
+        HttpEntity<Pabellon> request = new HttpEntity<>(unknownPabellon);
+        ResponseEntity<Void> response = restTemplate
+                .exchange("/pabellones/99999", HttpMethod.PUT, request, Void.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+    }
+    
+    @Test
+    @DirtiesContext
+    void shouldDeleteAnExistingPabellon() {
+        ResponseEntity<Void> response = restTemplate
+                .exchange("/pabellones/99", HttpMethod.DELETE, null, Void.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
+        
+        ResponseEntity<String> getResponse = restTemplate
+                .getForEntity("/pabellones/99", String.class);
+        assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+    }
+    
+    @Test
+    void shouldNotDeleteAPabellonThatDoesNotExist() {
+        ResponseEntity<Void> deleteResponse = restTemplate
+                .exchange("/pabellones/99999", HttpMethod.DELETE, null, Void.class);
+        assertThat(deleteResponse.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+    }
     
 }

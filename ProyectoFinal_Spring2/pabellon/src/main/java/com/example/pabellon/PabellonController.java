@@ -10,6 +10,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -62,7 +64,30 @@ public class PabellonController {
 	}
 	
 	@PutMapping("/{requestedId}")
-	private ResponseEntity<Void> putPabellon(@PathVariable Long requestedId, @RequestBody Pabellon pabellonUpdate) {
+	private ResponseEntity<Void> putPabellon(@PathVariable Long requestedId, @RequestBody Pabellon pabellonActualizado) {
+	    Optional<Pabellon> optional = pabellonRepository.findById(requestedId);
+	    if (optional.isPresent()) {
+	        Pabellon pabellon = optional.get();
+	        Pabellon updatePabellon = new Pabellon(
+	            pabellon.getId(),
+	            pabellonActualizado.getNombre(),
+	            pabellonActualizado.getUbicacion(),
+	            pabellonActualizado.getAforo(),
+	            pabellonActualizado.isDisponibilidad(),
+	            pabellonActualizado.getPhoto()
+	        );
+	        pabellonRepository.save(updatePabellon);
+	        return ResponseEntity.noContent().build();
+	    } else {
+	        return ResponseEntity.notFound().build();
+	    }
+	}
+	
+	@DeleteMapping("/{id}")
+	private ResponseEntity<Void> deletePabellon(@PathVariable Long id) {
+		pabellonRepository.deleteById(id);
 	    return ResponseEntity.noContent().build();
 	}
+
+
 }
