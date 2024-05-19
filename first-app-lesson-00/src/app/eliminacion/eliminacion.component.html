@@ -1,0 +1,9 @@
+<section class="listing-apply">
+  <h2 class="section-heading">¿Te apetece Borrar un pabellón?</h2>
+  <form [formGroup]="formularioSolicitud" (ngSubmit)="enviarEliminacion()">
+    <label for="id">Id</label>
+    <input id="id" type="text" formControlName="id">
+
+    <button type="button" class="primary" (click)="enviarEliminacion()">Borrar</button>
+  </form>
+</section>

@@ -1,0 +1,21 @@
+<section class="listing-apply">
+  <h2 class="section-heading">¿Te apetece Agregar o Borrar un pabellón?</h2>
+  <form [formGroup]="formularioSolicitud" (ngSubmit)="enviarAgregacion()">
+    <label for="nombre">Nombre</label>
+    <input id="nombre" type="text" formControlName="nombre">
+
+    <label for="ubicacion">Ubicación</label>
+    <input id="ubicacion" type="text" formControlName="ubicacion">
+
+    <label for="aforo">Aforo</label>
+    <input id="aforo" type="number" formControlName="aforo">
+
+    <label for="disponibilidad">Disponibilidad</label>
+    <input id="disponibilidad" type="text" formControlName="disponibilidad">
+
+    <label for="photo">Imagen (Link)</label>
+    <input id="photo" type="url" formControlName="photo">
+
+    <button type="button" class="primary" (click)="enviarAgregacion()">Agregar</button>
+  </form>
+</section>

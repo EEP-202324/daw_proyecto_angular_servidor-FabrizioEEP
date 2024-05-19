@@ -3,7 +3,5 @@
   <h2 class="listing-heading">{{ atributosPabellon.nombre }}</h2>
   <p class="listing-location">{{ atributosPabellon.disponibilidad}}, {{atributosPabellon.disponibilidad }}</p>
   <a [routerLink]="['/detalles', atributosPabellon.id]">Saber más</a>
-  <button mat-icon-button color="primary" >Agregar
-  </button>
-  <button onclick="eliminarPabellon()">Borrar</button>
+  <button type="button" class="delete button-selector" (click)="eliminarPabellon(atributosPabellon.id)">Eliminar universidad</button>
 </section>

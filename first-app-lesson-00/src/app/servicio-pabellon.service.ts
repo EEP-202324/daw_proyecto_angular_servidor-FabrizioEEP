@@ -47,16 +47,8 @@ export class ServicioPabellonService {
     );
   }
 
-  eliminarPabellon(id: number) {
-    return this.http.get<AtributosPabellon>(`${this.url}/${id}`).pipe(
-      switchMap(pabellon =>
-        this.http.delete(`${this.url}/${id}`).pipe(
-          tap(() => {
-            console.log(`Pabellón ${pabellon.id} eliminado correctamente`);
-          })
-        )
-      )
-    );
+  eliminarPabellon(id: number): Observable<any> {
+    return this.http.delete(`${this.url}/${id}`);
   }
-}
 
+}

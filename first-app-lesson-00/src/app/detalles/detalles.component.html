@@ -10,8 +10,7 @@
 
     <ul>
       <li>Aforo: {{pabellon?.aforo}}</li>
-      <!-- <li>Funcionalidad: {{pabellon?.funcionalidad}}</li>
-      <li>Fecha de disponibilidad: {{pabellon?.fechaDisponibilidad}}</li> -->
+      <li>Id: {{pabellon?.id}}</li>
     </ul>
   </section>
   <section class="listing-apply">
@@ -33,6 +32,7 @@
       <input id="photo" type="photo" formControlName="photo">
 
       <button type="submit" class="primary" onclick="enviarSolicitud()">Modificar</button>
+      <button type="button" class="primary" (click)="eliminarPabellon()">Eliminar universidad</button>
     </form>
   </section>
 </article>

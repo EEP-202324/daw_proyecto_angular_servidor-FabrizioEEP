@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { AtributosPabellonComponent } from '../atributos-pabellon/atributos-pabellon.component';
 import { AtributosPabellon } from '../atributos-pabellon';
 import { ServicioPabellonService } from '../servicio-pabellon.service';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { ServicioPabellonService } from '../servicio-pabellon.service';
   imports: [
     CommonModule,
     AtributosPabellonComponent,
+    RouterLink,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -41,5 +43,9 @@ export class HomeComponent {
       atributosPabellon =>
   atributosPabellon?.nombre.toLowerCase().includes(texto.toLowerCase())
     );
+  }
+
+  eliminarPabellon(id: number) {
+    this.listaPabellonesFiltado = this.listaPabellonesFiltado.filter(u => u.id !== id);
   }
 }

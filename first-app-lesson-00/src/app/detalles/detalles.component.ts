@@ -1,6 +1,6 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router'; // Importa Router también
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
 import { ServicioPabellonService } from '../servicio-pabellon.service';
 import { AtributosPabellon } from '../atributos-pabellon';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -10,16 +10,18 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   templateUrl: './detalles.component.html',
-  styleUrl: './detalles.component.css'
+  styleUrls: ['./detalles.component.css'] // Corrige "styleUrl" a "styleUrls"
 })
 export class DetallesComponent implements OnInit{
   pabellon: AtributosPabellon | undefined;
   formularioSolicitud: FormGroup;
 
-  constructor(private route: ActivatedRoute, private servicioPabellonService: ServicioPabellonService) {
+  constructor(private route: ActivatedRoute,
+              private router: Router, // Inyecta Router
+              private servicioPabellonService: ServicioPabellonService) {
     this.formularioSolicitud = new FormGroup({
       nombre: new FormControl('',Validators.required),
       ubicacion: new FormControl('',Validators.required),
@@ -46,8 +48,8 @@ export class DetallesComponent implements OnInit{
       error: error =>{
         console.log('Error al modificar el Pabellón', error)
       }
-  });
-}
+    });
+  }
 
   enviar(): void{
     if(this.formularioSolicitud.valid){
@@ -64,11 +66,18 @@ export class DetallesComponent implements OnInit{
       })
     }
   }
-    // presentarSolicitud(){
-    //   this.servicioPabellonService.presentarSolicitud(
-    //     this.formularioSolicitud.value.Nombre ?? '',
-    //     this.formularioSolicitud.value.Apellido ?? '',
-    //     this.formularioSolicitud.value.email ?? ''
-    //   );
-    // }
+
+  eliminarPabellon(): void {
+    if (this.pabellon) {
+      this.servicioPabellonService.eliminarPabellon(this.pabellon.id).subscribe(
+        () => {
+          console.log('Pabellón eliminado exitosamente');
+          this.router.navigate(['/']); // Utiliza el router para navegar
+        },
+        error => {
+          console.error('Error al eliminar el pabellón:', error);
+        }
+      );
+    }
+  }
 }
