@@ -42,9 +42,9 @@ export class DetallesComponent {
     this.servicioPabellonService.agregarPabellon(
       this.formularioSolicitud.value.nombre ?? '',
       this.formularioSolicitud.value.ubicacion ?? '',
-      this.formularioSolicitud.value.aforo ?? 0,
-      this.formularioSolicitud.value.funcionalidad ?? FuncionalidadTipo.Aula,
-      this.formularioSolicitud.value.disponibilidad ?? false,
+      this.formularioSolicitud.value.aforo ?? '',
+      this.formularioSolicitud.value.funcionalidad ?? '',
+      this.formularioSolicitud.value.disponibilidad ?? '',
       this.formularioSolicitud.value.photo ?? '',
       this.formularioSolicitud.value.fechaDisponibilidad ?? new Date(),
     );
