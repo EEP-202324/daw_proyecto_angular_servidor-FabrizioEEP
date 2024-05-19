@@ -1,13 +1,17 @@
 package com.example.pabellon;
 
+import java.net.URI;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/pabellones")
@@ -28,5 +32,15 @@ public class PabellonController {
 		} else {
 		return ResponseEntity.notFound().build();
 		}
+	}
+	
+	@PostMapping
+	private ResponseEntity<Void> createPabellon(@RequestBody Pabellon newPabellonRequest, UriComponentsBuilder ucb){
+		Pabellon savedPabellon = pabellonRepository.save(newPabellonRequest);
+		URI locationOfNewPabellon = ucb
+				.path("pabellones/{id}")
+				.buildAndExpand(savedPabellon.getId())
+				.toUri();
+		return ResponseEntity.created(locationOfNewPabellon).build();
 	}
 }
