@@ -1,0 +1,26 @@
+[
+    {
+        "id": 99,
+        "nombre": "pabellon1",
+        "ubicacion": "Londres",
+        "aforo": 100,
+        "disponibilidad": true,
+        "photo": "ruta/a/la/foto.jpg"
+    },
+    {
+        "id": 100,
+        "nombre": "pabellon2",
+        "ubicacion": "Londres",
+        "aforo": 100,
+        "disponibilidad": true,
+        "photo": "ruta/a/la/foto.jpg"
+    },
+    {
+        "id": 101,
+        "nombre": "pabellon3",
+        "ubicacion": "Londres",
+        "aforo": 100,
+        "disponibilidad": true,
+        "photo": "ruta/a/la/foto.jpg"
+    }
+]

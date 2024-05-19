@@ -1,5 +1,7 @@
 package com.example.pabellon;
 
+import java.util.Objects;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -79,6 +81,25 @@ public class Pabellon {
 
 	public void setPhoto(String photo) {
 		this.photo = photo;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(aforo, disponibilidad, id, nombre, photo, ubicacion);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pabellon other = (Pabellon) obj;
+		return aforo == other.aforo && disponibilidad == other.disponibilidad && Objects.equals(id, other.id)
+				&& Objects.equals(nombre, other.nombre) && Objects.equals(photo, other.photo)
+				&& Objects.equals(ubicacion, other.ubicacion);
 	}
 	
     @Override
