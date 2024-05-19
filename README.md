@@ -13,24 +13,17 @@
 
 #### Spring
     - Requisitos mínimos
-    - Verbo GET para recuperar un elemento de la
-BBDD por id
-    - Verbo PUT para actualizar un elemento en la
-BBDD
-    - Verbo DELETE para eliminar un elemento de la
-BBDD 
-    - Verbo GET con paginación, ordenación y
-filtrado
+    - Verbo GET para recuperar un elemento de la BBDD por id
+    - Verbo PUT para actualizar un elemento en la BBDD
+    - Verbo DELETE para eliminar un elemento de la BBDD 
+    - Verbo GET con paginación, ordenación y filtrado
     - Test Unitarios
 
 #### Puntos no tratados
-    - Widget de selección para los valores en
-las pantallas de creación/modificación
+    - Widget de selección para los valores en las pantallas de creación/modificación
     - Test Unitarios (Angular)
-    - Controlador para los valores, con
-verbo GET para recuperarlos (BBDD o fijos) 
-    - Tabla adicional con los valores, con relación 1:N
-o M:N con la principal
+    - Controlador para los valores, con verbo GET para recuperarlos (BBDD o fijos) 
+    - Tabla adicional con los valores, con relación 1:N o M:N con la principal
     - Consultas de búsqueda con filtrado
 
 ### Link Video
